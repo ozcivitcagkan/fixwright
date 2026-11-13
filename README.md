@@ -77,7 +77,7 @@ F1 peaks at 0.50, but I chose 0.45 on purpose: the model can ignore a weak match
 
 - **Sign-in:** SSO with Microsoft Entra ID (OpenID Connect with PKCE, handled on the server), plus a one-click demo session. Roles come only from signed token claims.
 - **Five roles:** `demo`, `analyst`, `reviewer`, `admin`, `api`. An analyst can start analyses but cannot approve them, a reviewer can.
-- **Use from AI assistants:** an MCP server gives assistants such as Claude Desktop four hand-picked tools (list, create, analyze, decide). Update and delete are left out on purpose, and the decision still needs a person's explicit yes.
+- **Use from AI assistants:** an MCP server gives assistants four hand-picked tools (list, create, analyze, decide). Update and delete are left out on purpose, and the decision still needs a person's explicit yes.
 - **Security defaults:** signed `HttpOnly` session cookies, a CSRF header for browser requests, a strict Content-Security-Policy, constant-time key comparison, and settings that fail closed when a secret is missing.
 - **A demo that is safe to share:** daily limits checked before any model call, and demo data deleted automatically after 7 days, including the agent's stored state.
 - **Resilient search:** if the embedding service is down, incidents are still saved and their vectors are filled in later.
@@ -100,7 +100,6 @@ F1 peaks at 0.50, but I chose 0.45 on purpose: the model can ignore a weak match
 
 ## Honest limits
 
-- It is a portfolio project. It has no ticket system integrations (Jira, ServiceNow) and no separation between organizations.
 - The evaluation sets are small, and the judge is the same model as the agent.
 - The free tier sleeps when idle, so the first request after a pause is slow.
 - Demo data is public. Please do not enter personal or confidential information.
